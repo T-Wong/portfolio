@@ -1,101 +1,673 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tyler Wong - Home</title>
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="css/bootstrap-theme.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-</head>
-<body>
-	<div class="navbar"><!-- start navbar -->
-		<div class="navbar-inner">
-			<img src="img/logo.png" alt="Tyler Wong" />
-			<nav class="pull-right">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href"#">Home</a></li>
-					<li><a href"#">Projects</a></li>
-					<li><a href"#">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div><!-- end navbar -->
+<meta charset="utf-8">
+<title>BOOTSCROLLER | responsive parallax Bootstrap template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="responsive parallax Bootstrap template">
+<meta name="author" content="ArtLabs">
 
-	<div id="home-banner" class="carousel slide" data-ride="carousel"><!-- start carousel -->
-		<ol class="carousel-indicators">
-			<li data-target="#home-banner" data-slide-to="0" class="active">
-			<li data-target="#home-banner" data-slide-to="1">
-			<li data-target="#home-banner" data-slide-to="2">
-		</ol>
-    	<div class="carousel-inner">
-			<div class="item active">
-				<img src="img/bg.jpeg" class="img-responsive"</img>
-				<div class="carousel-caption">
-					<h1>A Professional Software Developer</h1>
-					<h3>Dependable and experienced.</h3>
-				</div>
-			</div>
-			<div class="item">
-				<img src="img/bg.jpeg" class="img-responsive"</img>
-				<div class="carousel-caption">
-					<h1>A Professional Software Developer</h1>
-					<h3>Dependable and experienced.</h3>
-				</div>
-			</div>
-			<div class="item">
-				<img src="img/bg.jpeg" class="img-responsive"</img>
-				<div class="carousel-caption">
-					<h1>A Professional Software Developer</h1>
-					<h3>Dependable and experienced.</h3>
-				</div>
-			</div>
-		</div>
-		<!-- start controls -->
-		<a class="carousel-control left" href="#home-banner" data-slide="prev">
-			<span class="icon-prev"></span>
-		</a>
-		<a class="carousel-control right" href="#home-banner" data-slide="next">
-			<span class="icon-prev"></span>
-		</a>
-		<!-- end controls -->
-	</div><!-- end carousel -->
+<!-- ######################## Styles ######################
+	=======================================================-->
+	<link href="assets/css/animate.min.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<!--<link href="assets/css/flat-ui.css" rel="stylesheet">-->
+
+
+<!-- ####################################################################
+	!important THIS FILE -= style.css =- ON BOTTOM OF BOOTSTRAP STYLEs  LIST
+	It override bootstrap def. style
+===================================================-->
+<link href="assets/css/style.css" rel="stylesheet">
+
+<!-- FontAwesome styles (iconic font)-->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet"> 
+<!-- prettyPhoto styles -->
+
+<!-- Gallery inlarge script styles-->
+<link href="assets/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 	
-	<div id="languages"><!-- start languages -->
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="java text-center">
-						<img src="img/java.png" alt="" />
-						<h2>Java</h2>
-						<p>The most widely used programming language. Write once, run anywhere.</p>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="c# text-center">
-						<img src="img/vs.png" alt="" />
-						<h2>C#</h2>
-						<p>Object oriented programming that is implemented in the .NET Framework.</p>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="html5 text-center">
-						<img src="img/html.png" alt="" />
-						<h2>HTML5</h2>
-						<p>Latest revision of HTML and used in a large majority of websites.</p>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="sql text-center">
-						<img src="img/sql.png" alt="" />
-						<h2>SQL</h2>
-						<p>Used to design and manage relational databases which can have many purposes.</p>
-					</div>
-				</div>
+<!-- Google web fonts -->
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="assets/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<body data-spy="scroll" data-target=".scroller-spy">
+
+<!--################# START MAIN-WRAPPER ####################
+	============================================================ --> 
+<div class="main-wrapper">
+
+			<!--START SCROLL EVENTS ELEMENTS--> 
+					<!-- !!CLICK EVENT TOP SCROLL-->
+					<div class="top-link-click right hidden-phone"></div>
+					<!-- !!HOVER EVENT TOP SCROLL-->
+					<div class="top-link right hidden-phone"></div>
+					<!-- !!HOVER EVENT TOP SCROLL-->
+					<div class="bottom-link right hidden-phone"></div>
+					<!-- !!CLICK EVENT TOP SCROLL-->
+					<div class="bottom-link-click right hidden-phone"></div>
+					<div class="top-corner"></div>
+					<div class="bottom-corner"></div>
+			<!--/. SCROLL EVENTS ELEMENTS--> 
+
+	<!-- ######################  START HEADER ######################
+		==============================================================-->
+	<header class="headertop needhead" id="header-section">
+	
+		<!-- START PARALLAX BG -->
+		<div class="innerbg">
+	
+			<div class="leftbg"></div>
+			
+			
+	<!-- ###################### START TOP MENU ####################
+		============================================================== -->
+
+<div class="nav-top"> 
+	<!-- navbar-fixed-top -->
+    <div class="navbar navbar-fixed-top navbar-inverse" id="top-nav"> 
+	<!-- INNER-->
+      <div class="navbar-inner">
+        <div class="container"> 
+		
+		<!-- Collapse button -->	
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+						<!-- LOGO -->
+						<a class="brand" href="index.html"> 
+						<span><i class="fa-icon-user"></i> Tyler Wong</span>
+						<!--<img src="assets/img/logo.png" alt="Logo">--></a>
+						
+			 <!-- TOP NAVIGATION-->
+			 <div id="main-nav" class="scroller-spy">
+				<nav class="nav-collapse collapse" >
+				  <ul class="nav pull-right" id="nav">
+					<li class="active"><a href="#header-section">Home</a> </li>
+					<li><a href="#skills-section">Skills</a> </li>
+					<li><a href="#projects-section">Projects</a> </li>
+					<li><a href="#contact-section">Contact</a> </li>
+				  </ul>
+				</nav>
+			  </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- ############################ END TOP MENU ###############
+	========================================================== -->		
+
+<!-- HEADER MAIN-->	
+<div class="hero-unit">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="text-center">
+				<hr class="half">
+					<h1 class="">A Professional Software Developer</h1>
+					<h2 class="text-center">
+					<span class="get-it">Dependable and experienced.</span> 
+					</h2>
+				<hr class="half">				
+			</div>	
+		</div>	
+	
+	</div>
+</div>
+
+
+</div><!--/ END PARALLAX BG-->
+</header>
+<!-- / ###################### END MAIN HEADER ####################
+	=============================================================== -->
+			
+
+
+	
+	<!-- ######################## FEATURES SECTION ##################
+	============================================================== -->			
+<section  id="skills-section">
+
+<!-- MARKETING INTRO-->
+<div class="panel first">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span12 text-center">
+				<span>Young and motivated developer
+					<span class="inner">Looking for an internship or part time work in the Seattle or Bellevue area.</span>
+				</span>
 			</div>
 		</div>
-	</div><!-- end languages -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+	</div>
+</div>
+<!--/ MARKETING INTRO-->
+	
+<section class="" id="team-section">
+
+<!-- TEAM ITEMS -->
+<div class="container">	
+	<div class="row-fluid" id="show4">
+</div>
+<!--/ROW FLUID--> 
+
+<!-- SKILLS ROW -->	
+<div class="row-fluid skills-services">
+
+<!-- SERVICE SIDE-->
+<div class="span6 wedo">
+	<!-- INNER ROW-->
+	<div class="row-fluid">
+		<h3 class="main-color">More Information</h3>
+		<!-- SERVICE ITEM-->
+			<div class="hexicon-icon-wrap">
+				<span class="">
+					<i class="fa-icon-pencil fa-icon-large pull-left"></i>
+				</span>
+			</div>
+			
+			<h4>Education</h4>
+			
+			<p class="">
+			My name is Tyler Wong and I am currently a junior at the University of Washington Seattle campus studying Computer Science.
+			</p>
+		<!--/ SERVICE ITEM-->
+		<hr/>
+		
+		<!-- SERVICE ITEM-->
+			<div class="hexicon-icon-wrap">
+				<span class="hexicon">
+					<i class="fa-icon-github fa-icon-large pull-left"></i>
+				</span>
+			</div>
+			
+			<h4>GitHub</h4>
+			
+			<p class="">
+			Come check out my GitHub page <a href="https://github.com/T-Wong">here</a> to see what I am currently working on and to see previous projects that I have completed. 
+			</p>
+		<!--/ SERVICE ITEM-->
+		<hr/>
+			
+			<!-- SERVICE ITEM-->
+			<div class="hexicon-icon-wrap">
+				<span class="hexicon">
+					<i class="fa-icon-cog fa-icon-large pull-left"></i>
+				</span>
+			</div>
+			
+			<h4>Java Development</h4>
+			
+			<p class="">
+			Java is the first programming language that I have learned and is my go to language. I have completed many projects with Java 
+			and it is the language that I am most experienced with.
+			</p>
+			<!--/ SERVICE ITEM-->
+			
+		<!--/SPAN12 ITEM -->
+	</div><!-- ROW-FLUID-->
+</div><!--/SPAN7-->
+
+<!-- SKILLS BAR SIDE-->
+<div class="span6" id="showbar"><!-- DO NOT REMOVE id="showbar" - animated point event-->
+	
+	<h3 class="main-color" >Skills</h3>
+	<!-- BAR ITEM-->
+	<h4>Java</h4>
+		<div class="progress">
+            <div class="bar notactive" style="width: 75%;">Proficient</div>
+        </div>
+	<!--/ BAR ITEM-->
+		
+	<!-- BAR ITEM-->
+	<h4>Selenium WebDriver</h4>
+		<div class="progress">
+            <div class="bar bar-danger notactive" style="width: 55%;">Competent</div>
+        </div>
+	<!--/ BAR ITEM-->
+		
+	<!-- BAR ITEM-->
+	<h4>C# .NET</h4>
+		<div class="progress">
+            <div class="bar bar-success notactive" style="width: 45%;">Competent</div>
+        </div>
+	<!--/ BAR ITEM-->
+		
+	<!-- BAR ITEM-->
+		<h4>SQL</h4>
+		<div class="progress">
+            <div class="bar bar-warning notactive" style="width: 35%;">Advanced Beginner</div>
+        </div>
+	<!--/ BAR ITEM-->
+		
+	<!-- BAR ITEM-->
+		<h4>HTML5</h4>
+		<div class="progress">
+            <div class="bar bar-info notactive" style="width: 25%;">Novice</div>
+        </div>
+	<!-- / BAR ITEM-->
+	
+	</div>
+<!--/ SKILLS BAR SIDE-->
+
+	</div>
+	<!-- / SKILLS ROW -->
+	<!-- / SERVICE SIDE-->
+</div>
+<!--/CONTAINER-->
+</section>
+<!-- /TEAM SECTION-->	
+
+
+<!-- ################## PORTFOLIO SECTION #################
+	======================================================= -->	
+<section id="projects-section">
+	
+		
+<!-- PORTFOLIO  HEADER -->
+<!-- HERE TITLE GOES WITH FILTERS MENU IN RIGHT SIDE-->
+<header class="page-header">
+		<div class="container">
+			<div class="row-fluid">
+	
+		<div class="span6">
+			<h3>Projects</h3>
+		</div>
+		
+		<div class="span6 hidden-phone">		
+		<!-- PROJECTS FILTER-->
+		<!-- just add your TAG to ==> data-filter=".yourtaghere" 
+		for SHOW ALL ==> data-filter="*" in button filter -->	
+		<!-- and then add your same TAG to portfolio item class="box" 
+		==> class="span4  project-item box YOURTAGHERE" -->
+		
+				<div class="text-right">
+					<div class="proj">
+						<div id="filters">
+							<div class="btn-toolbar">
+								<div class="btn-group">
+								<a href="#" data-filter="*" class="ione-col active btn btn-primary btn-large">Show All</a>
+								<a href="#" data-filter=".graphics" class="btn ione-col btn-primary btn-large">Applications</a>
+								<a href="#" data-filter=".web" class="btn ione-col btn-primary btn-large">Utilities</a>
+								<a href="#" data-filter=".branding" class="btn ione-col btn-primary btn-large">Projects</a>
+								<a href="#" data-filter=".seo" class="btn ione-col btn-primary btn-large">Other</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			<!--END: PROJECTS FILTER-->
+		</div>
+		
+		</div><!--/ROW-->
+</div><!--/CONTAINER-->
+</header><!-- / PORTFOLIO SECTION HEADER-->
+
+
+
+<!--################### START PORTFOLIO ###################
+	======================================================= -->
+<div class="container">
+	<div id="container-folio" class="row ufilter">
+	<!-- !important! => DONT REMOVE class="ufilter"--> 
+		<div id="portfolio" class="">
+			
+
+		
+		<!-- portfolio item -->
+		<div class="span4  project-item seo graphics box ">
+			<div class="thumbnail">
+		
+				<!-- IMAGE CONTAINER-->
+				<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="img-wrap">
+					<img src="images/indexb.png" alt="iPhonegraphy" /> 
+				</a>
+				<!--END IMAGE CONTAINER-->
+						 
+				<!-- CAPTION -->
+				<div class="caption">
+				<!-- TITLE -->
+					<h3 class="">Project title</h3>
+				<!-- / TITLE -->
+					
+				<!-- DESCRIPTION -->
+					<p class="caption-descr">
+					This project presents beautiful style graphic &amp; design. OnePager provides modern features
+					</p>
+				<!-- / DESCRIPTION -->		
+					
+				<!--BUTTONS-->
+				<div class="row-fluid">
+					<div class="span6">
+						<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="btn btn-success btn-block"><i class="fa-icon-zoom-in "></i> Enlarge</a>
+					</div>
+					<div class="span6">
+						<a class="btn btn-primary btn-block" href="http://wrapbootstrap.com/theme/scroll-strap-modern-parallax-one-pager-WB0XLB528">
+						<i class="fa-icon-link"></i> Visit site</a>
+					</div>
+				</div>
+				<!--/ BUTTONS-->
+							   
+				</div> 
+				<!--END CAPTION -->
+		
+			</div>
+		<!-- END: THUMBNAIL -->
+		</div>
+		<!-- END: portfolio item -->
+		
+		<!-- portfolio item -->
+		<div class="span4  project-item seo box ">
+			<div class="thumbnail">
+			
+				<!-- IMAGE CONTAINER-->
+				<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="img-wrap">
+					<img src="images/indexb.png" alt="iPhonegraphy" /> 
+				</a>
+				<!--END IMAGE CONTAINER-->
+						 
+				<!-- CAPTION -->
+				<div class="caption">
+				<!-- TITLE -->
+					<h3 class="">Project title</h3>
+				<!-- / TITLE -->
+					
+				<!-- DESCRIPTION -->
+					<p class="caption-descr">
+					This project presents beautiful style graphic &amp; design. OnePager provides modern features
+					</p>
+				<!-- / DESCRIPTION -->		
+					
+				<!--BUTTONS-->
+				<div class="row-fluid">
+					<div class="span6">
+						<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="btn btn-success btn-block"><i class="fa-icon-zoom-in "></i> Enlarge</a>
+					</div>
+					<div class="span6">
+						<a class="btn btn-primary btn-block" href="http://wrapbootstrap.com/theme/scroll-strap-modern-parallax-one-pager-WB0XLB528">
+						<i class="fa-icon-link"></i> Visit site</a>
+					</div>
+				</div>
+				<!--/ BUTTONS-->
+							   
+				</div> 
+				<!--END CAPTION -->
+			
+			</div>
+		<!-- END: THUMBNAIL -->
+		</div>
+		<!-- END: portfolio item -->
+		
+		<!-- portfolio item -->
+		<div class="span4  project-item graphics web box ">
+			<div class="thumbnail">
+			
+				<!-- IMAGE CONTAINER-->
+				<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="img-wrap">
+					<img src="images/indexb.png" alt="iPhonegraphy" /> 
+				</a>
+				<!--END IMAGE CONTAINER-->
+						 
+				<!-- CAPTION -->
+				<div class="caption">
+				<!-- TITLE -->
+					<h3 class="">Project title</h3>
+				<!-- / TITLE -->
+					
+				<!-- DESCRIPTION -->
+					<p class="caption-descr">
+					This project presents beautiful style graphic &amp; design. OnePager provides modern features
+					</p>
+				<!-- / DESCRIPTION -->		
+					
+				<!--BUTTONS-->
+				<div class="row-fluid">
+					<div class="span6">
+						<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="btn btn-success btn-block"><i class="fa-icon-zoom-in "></i> Enlarge</a>
+					</div>
+					<div class="span6">
+						<a class="btn btn-primary btn-block" href="http://wrapbootstrap.com/theme/scroll-strap-modern-parallax-one-pager-WB0XLB528">
+						<i class="fa-icon-link"></i> Visit site</a>
+					</div>
+				</div>
+				<!--/ BUTTONS-->
+							   
+				</div> 
+				<!--END CAPTION -->
+			
+			</div>
+		<!-- END: THUMBNAIL -->
+		</div>
+		<!-- END: portfolio item -->
+		
+		<!-- portfolio item -->
+		<div class="span4  project-item branding web box ">
+			<div class="thumbnail">
+		
+				<!-- IMAGE CONTAINER-->
+				<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="img-wrap">
+					<img src="images/indexb.png" alt="iPhonegraphy" /> 
+				</a>
+				<!--END IMAGE CONTAINER-->
+						 
+				<!-- CAPTION -->
+				<div class="caption">
+				<!-- TITLE -->
+					<h3 class="">Project title</h3>
+				<!-- / TITLE -->
+					
+				<!-- DESCRIPTION -->
+					<p class="caption-descr">
+					This project presents beautiful style graphic &amp; design. OnePager provides modern features
+					</p>
+				<!-- / DESCRIPTION -->		
+					
+				<!--BUTTONS-->
+				<div class="row-fluid">
+					<div class="span6">
+						<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="btn btn-success btn-block"><i class="fa-icon-zoom-in "></i> Enlarge</a>
+					</div>
+					<div class="span6">
+						<a class="btn btn-primary btn-block" href="http://wrapbootstrap.com/theme/scroll-strap-modern-parallax-one-pager-WB0XLB528">
+						<i class="fa-icon-link"></i> Visit site</a>
+					</div>
+				</div>
+				<!--/ BUTTONS-->
+							   
+				</div> 
+				<!--END CAPTION -->
+			
+			</div>
+		<!-- END: THUMBNAIL -->
+		</div>
+		<!-- END: portfolio item -->
+		
+		<!-- portfolio item -->
+		<div class="span4  project-item seo graphics box ">
+			<div class="thumbnail">
+			
+				<!-- IMAGE CONTAINER-->
+				<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="img-wrap">
+					<img src="images/indexb.png" alt="iPhonegraphy" /> 
+				</a>
+				<!--END IMAGE CONTAINER-->
+						 
+				<!-- CAPTION -->
+				<div class="caption">
+				<!-- TITLE -->
+					<h3 class="">Project title</h3>
+				<!-- / TITLE -->
+					
+				<!-- DESCRIPTION -->
+					<p class="caption-descr">
+					This project presents beautiful style graphic &amp; design. OnePager provides modern features
+					</p>
+				<!-- / DESCRIPTION -->		
+					
+				<!--BUTTONS-->
+				<div class="row-fluid">
+					<div class="span6">
+						<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="btn btn-success btn-block"><i class="fa-icon-zoom-in "></i> Enlarge</a>
+					</div>
+					<div class="span6">
+						<a class="btn btn-primary btn-block" href="http://wrapbootstrap.com/theme/scroll-strap-modern-parallax-one-pager-WB0XLB528">
+						<i class="fa-icon-link"></i> Visit site</a>
+					</div>
+				</div>
+				<!--/ BUTTONS-->
+							   
+				</div> 
+				<!--END CAPTION -->
+
+			</div>
+		<!-- END: THUMBNAIL -->
+		</div>
+		<!-- END: portfolio item -->
+		
+		<!-- portfolio item -->
+		<div class="span4  project-item seo box ">
+			<div class="thumbnail">
+
+				<!-- IMAGE CONTAINER-->
+				<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="img-wrap">
+					<img src="images/indexb.png" alt="iPhonegraphy" /> 
+				</a>
+				<!--END IMAGE CONTAINER-->
+						 
+				<!-- CAPTION -->
+				<div class="caption">
+				<!-- TITLE -->
+					<h3 class="">Project title</h3>
+				<!-- / TITLE -->
+					
+				<!-- DESCRIPTION -->
+					<p class="caption-descr">
+					This project presents beautiful style graphic &amp; design. OnePager provides modern features
+					</p>
+				<!-- / DESCRIPTION -->		
+				
+				<!--BUTTONS-->
+				<div class="row-fluid">
+					<div class="span6">
+						<a data-gal="prettyPhoto[gallery]" href="images/indexb.png" class="btn btn-success btn-block"><i class="fa-icon-zoom-in "></i> Enlarge</a>
+					</div>
+					<div class="span6">
+						<a class="btn btn-primary btn-block" href="http://wrapbootstrap.com/theme/scroll-strap-modern-parallax-one-pager-WB0XLB528">
+						<i class="fa-icon-link"></i> Visit site</a>
+					</div>
+				</div>
+				<!--/ BUTTONS-->		   
+				</div> 
+				<!--END CAPTION -->
+		
+			</div>
+		<!-- END: THUMBNAIL -->
+		</div>
+		<!-- END: portfolio item -->
+
+  
+		</div><!--/innner folio row-->
+	</div><!-- /container-folio row ufilter!-->	
+</div>
+<!--/CONTAINER-->
+</section><!--/ portfolio section-->
+
+<!-- ###################### FOOTER #######################
+    ================================================== -->
+<footer class="footer" id="contact-section">
+  <div class="container">
+   
+<!-- CONTACT HEADER-->
+<div class="">
+	<div class="foothead">
+		<div class="row-fluid">
+		<div class="span12 page-header">
+			<h3>CONTACT</h3>
+		</div>
+		</div>
+	</div>	
+</div>
+<!--/ CONTAC HEADER-->
+
+<div class="row-fluid">
+	
+<div class="span6">
+    <h4 class="line3 center standart-h4title"><span>Contact Information</span></h4>
+        <ul class="footer-links">
+          <li>E-Mail: <a href="mailto:ty-w@live.com">Ty-W@live.com</a></li>
+          <li>Phone: Request via E-Mail</li>
+        </ul>
+</div>
+
+<div class="span6">
+<h4>Lets Stay Connected</h4>
+		<ul class="social-top">
+			<li><a href="https://github.com/T-Wong" title=""><i class="fa-icon-github-alt"></i></a></li>
+			<li><a href="http://www.linkedin.com/in/wongtyler" title=""><i class="fa-icon-linkedin"></i></a></li>
+		</ul>
+   
+		
+		
+</div>
+</div>
+<!-- ROW-FLUID-->
+</div>
+</footer>
+<!-- END: FOOTER -->
+
+
+</div>
+<!-- END: MAIN-WRAPPER-->
+
+<!-- Placed at the end of the document so the pages load faster --> 
+
+<script src="assets/js/jquery.js" type="text/javascript"></script> 
+<script src="assets/js/google-code-prettify/prettify.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-transition.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-alert.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-modal.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-dropdown.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-scrollspy.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-tab.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-tooltip.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-popover.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-button.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-collapse.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-carousel.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-typeahead.js" type="text/javascript"></script> 
+<script src="assets/js/bootstrap-affix.js" type="text/javascript"></script> 
+<script src="assets/js/application.js" type="text/javascript"></script> 
+<script src="assets/js/jquery.easing.js" type="text/javascript" ></script>
+<script src="assets/js/jquery.waitforimages.js" type="text/javascript" ></script> 
+<script src="assets/js/jquery.isotope.min.js" type="text/javascript" ></script>
+<script src="assets/js/jquery.prettyPhoto-3.1.4-W3C.js" type="text/javascript"></script> 
+<script src="assets/js/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/js/jquery.inview.js"></script>
+<script src="assets/js/jquery.parallax-1.1.3.js" type="text/javascript" ></script>
+<script src="assets/js/jquery.localscroll-1.2.7-min.js" type="text/javascript" ></script>
+<script src="assets/js/jquery.scrollTo-1.4.2-min.js" type="text/javascript" ></script>
+
+<!-- gMap PLUGIN -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="assets/js/jquery.gmap.js"></script>
+<!-- gMap PLUGIN -->
+
+<script type="text/javascript" src="assets/js/custom.js"></script>
+
+
 </body>
 </html>
